@@ -1,0 +1,476 @@
+:root {
+  --deep-navy: #127369;
+  --dusty-blue: #10403b;
+  --soft-cream: #f8f4e9;
+  --sage-green: #8ca87c;
+  --rose-gold: #8c1f28;
+  --light-gold: #d4c4a8;
+  --dark-text: #2c2c2c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: var(--dark-text);
+  background-color: var(--soft-cream);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+.flex {
+  max-width: 100%;
+  height: auto;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Header Section */
+header {
+  height: 100vh;
+  background: linear-gradient(rgba(26, 43, 60, 0.6), rgba(26, 43, 60, 0.4)),
+    url("./assets/hero-4.jpg") no-repeat center center/cover;
+  /* background: linear-gradient(rgba(26, 43, 60, 0.6), rgba(26, 43, 60, 0.4)),
+    url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80")
+      no-repeat center center/cover; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.floating-elements {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.floating-element {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.5rem;
+  animation: float 10s linear infinite;
+  opacity: 0;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.names {
+  font-family: "Playfair Display", serif;
+  font-size: 5.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1.2s ease forwards 0.5s;
+  letter-spacing: 2px;
+}
+
+.names:after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 2px;
+  background: var(--light-gold);
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: expandLine 1s ease forwards 1.5s;
+}
+
+.date {
+  font-size: 1.8rem;
+  letter-spacing: 4px;
+  margin-bottom: 2rem;
+  font-weight: 300;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease forwards 1s;
+  color: var(--light-gold);
+}
+
+.tagline {
+  font-size: 1.3rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  font-weight: 300;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1s ease forwards 1.5s;
+  line-height: 1.8;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.25rem;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--soft-cream);
+  cursor: pointer;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+  text-decoration: none;
+}
+
+/* Introduction Section */
+.introduction {
+  padding: 120px 0;
+  text-align: center;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+  color: var(--deep-navy);
+}
+
+.section-title:after {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 2px;
+  background: var(--rose-gold);
+  bottom: -10px;
+  left: 50%;
+  transform: scaleX(0);
+  transform-origin: center;
+  animation: expandLine 1s ease forwards 0.5s;
+}
+
+.intro-text {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  color: var(--dark-text);
+  line-height: 1.8;
+}
+
+/* Ceremonies Section */
+.ceremonies {
+  padding: 120px 0;
+  background-color: var(--soft-cream);
+  position: relative;
+}
+
+.ceremony-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.ceremony-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(139, 160, 178, 0.15);
+  overflow: hidden;
+  width: 100%;
+  max-width: 350px;
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(40px);
+  position: relative;
+  z-index: 1;
+}
+
+.ceremony-card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    var(--dusty-blue) 0%,
+    var(--sage-green) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.ceremony-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 20px 40px rgba(139, 160, 178, 0.25);
+}
+
+.ceremony-card:hover:before {
+  opacity: 0.03;
+}
+
+.ceremony-header {
+  background: linear-gradient(
+    135deg,
+    var(--deep-navy) 0%,
+    var(--dusty-blue) 100%
+  );
+  color: white;
+  padding: 25px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ceremony-header:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+  opacity: 0.3;
+}
+
+.ceremony-name {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  margin-bottom: 5px;
+  position: relative;
+  z-index: 1;
+}
+
+.ceremony-date {
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+  color: var(--light-gold);
+}
+
+.ceremony-details {
+  padding: 30px;
+}
+
+.ceremony-time {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: var(--deep-navy);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ceremony-time i {
+  color: var(--rose-gold);
+}
+
+.ceremony-venue {
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.ceremony-map {
+  height: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 15px;
+  border: 1px solid var(--dusty-blue);
+  transition: all 0.3s ease;
+}
+
+.ceremony-map:hover {
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(139, 160, 178, 0.2);
+}
+
+/* RSVP Section */
+.rsvp {
+  padding: 3rem 0;
+  background: linear-gradient(
+    135deg,
+    var(--deep-navy) 0%,
+    var(--dusty-blue) 100%
+  );
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.rsvp:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+  opacity: 0.3;
+}
+
+.rsvp-content {
+  position: relative;
+  z-index: 1;
+}
+
+.rsvp .section-title {
+  color: var(--soft-cream);
+}
+
+.rsvp .section-title:after {
+  background: var(--light-gold);
+}
+
+.rsvp .intro-text {
+  color: white;
+  font-weight: lighter;
+  font-style: italic;
+}
+
+/* Footer */
+footer {
+  background: var(--dark-text);
+  color: white;
+  text-align: center;
+  padding: 40px 0;
+  font-size: 1rem;
+}
+
+.footer-heart {
+  color: var(--rose-gold);
+  margin: 0 5px;
+  animation: pulse 2s infinite;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes expandLine {
+  to {
+    transform: translateX(-50%) scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0) translateX(-50%);
+  }
+  40% {
+    transform: translateY(-10px) translateX(-50%);
+  }
+  60% {
+    transform: translateY(-5px) translateX(-50%);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .names {
+    font-size: 3.5rem;
+  }
+
+  .date {
+    font-size: 1.4rem;
+  }
+
+  .ceremony-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ceremony-card {
+    max-width: 100%;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
