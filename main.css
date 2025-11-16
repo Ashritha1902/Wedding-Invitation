@@ -127,7 +127,7 @@ header {
   font-size: 1.8rem;
   letter-spacing: 4px;
   margin-bottom: 2rem;
-  font-weight: 300;
+  font-weight: 500;
   opacity: 0;
   transform: translateY(30px);
   animation: fadeUp 1s ease forwards 1s;
